@@ -131,12 +131,18 @@
                     <a href="https://github.com/AdityanathSingh"><i class="fab fa-github"></i></a>
                 </div>
             </div>
-            <form class="contact-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message" required></textarea>
-                <button type="submit" class="submit-btn">Send Message</button>
-            </form>
+            <form 
+    id="contact-form"
+    action="https://formspree.io/f/YOUR_FORMSPREE_ID" 
+    method="POST"
+    class="contact-form"
+>
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="_replyto" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    <input type="hidden" name="_subject" value="New message from portfolio">
+    <button type="submit" class="submit-btn">Send Message</button>
+</form>
         </div>
     </section>
 
