@@ -96,3 +96,22 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('load', animateOnScroll);
     window.addEventListener('scroll', animateOnScroll);
 });
+// Form submission handling
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        
+        // Show loading state
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        submitBtn.disabled = true;
+        
+        // Formspree handles the submission automatically
+        // This just provides visual feedback
+        setTimeout(() => {
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+        }, 3000);
+    });
+}
